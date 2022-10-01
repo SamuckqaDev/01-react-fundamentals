@@ -1,4 +1,12 @@
 .header{
-    background: #000;
-    color: white;
+    background: var(--gray-800);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem 0; 
+    block-size: 80px;
+}
+
+.header img{
+    block-size: 2rem;
 }
