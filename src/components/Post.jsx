@@ -22,11 +22,12 @@ export function Post() {
       <div className={styles.content}>
         <p>Heyy devs 👋</p>
         <p>I just uploaded my project to my portfolio </p>
-        <p>👉
-          <a href="">samuel.desig/doctorcare</a>
+        <p>
+          👉 <a href="">samuel.desig/doctorcare</a>
         </p>
         <p>
-          <a href="">#newproject #nlw #rocketseat</a>
+          <a href="">#newproject</a> <a href="">#nlw</a>{" "}
+          <a href="">#rocketseat</a>{" "}
         </p>
       </div>
     </article>
