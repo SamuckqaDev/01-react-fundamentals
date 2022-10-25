@@ -117,3 +117,7 @@
   visibility: visible;
   max-block-size: none;
 }
+
+.commentList{
+  margin-block-start: 4rem;
+}
