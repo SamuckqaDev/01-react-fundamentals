@@ -2,7 +2,7 @@ import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
-export function Post() {
+export function Post(props) {
   return (
     <article className={styles.post}>
       <header>
@@ -10,7 +10,7 @@ export function Post() {
           <Avatar src={"https://github.com/samuckqadev.png"} />
 
           <div className={styles.authorInfo}>
-            <strong>Samuel A. Tomimatu</strong>
+            <strong>{props.author}</strong>
             <span>Web Developer</span>
           </div>
         </div>
