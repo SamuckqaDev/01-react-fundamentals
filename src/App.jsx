@@ -9,7 +9,7 @@ const posts = [
   {
     id: 1,
     author: {
-      avatarUrk: "http://github.com/diego3g.png",
+      avatarUrl: "http://github.com/diego3g.png",
       name: "Diego Fernandes",
       role: "CTO @Rocketseat",
     },
@@ -25,9 +25,9 @@ const posts = [
     publishedAt: new Date("2022-05-10 20:00:00"),
   },
   {
-    id: 1,
+    id: 2,
     author: {
-      avatarUrk: "http://github.com/maykbrito.png",
+      avatarUrl: "http://github.com/maykbrito.png",
       name: "Mayk Brito",
       role: "Educator @Rocketseat",
     },
@@ -43,9 +43,9 @@ const posts = [
     publishedAt: new Date("2022-05-10 20:00:00"),
   },
   {
-    id: 1,
+    id: 3,
     author: {
-      avatarUrk: "http://github.com/samuckqadev.png",
+      avatarUrl: "http://github.com/samuckqadev.png",
       name: "Samuel Tomimatu",
       role: "QA Intern @CIP/SA",
     },
