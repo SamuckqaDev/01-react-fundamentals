@@ -5,9 +5,11 @@ import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState([1, 2, 4]);
+  const [comments, setComments] = useState(["Post very good !"]);
 
   const published = format(publishedAt, "d LLLL 'at' HH:mm'h'");
+
+  const [newCommentText, setNewCommentText] = useState("");
 
   const publishedRelativeToNow = formatDistanceToNow(publishedAt, {
     addSuffix: true,
@@ -16,7 +18,12 @@ export function Post({ author, publishedAt, content }) {
   function doCreateNewComment() {
     event.preventDefault();
 
-    setComments([...comments, comments.length + 1]);
+    setComments([...comments, newCommentText]);
+    setNewCommentText("");
+  }
+
+  function doNewCommentChange(e) {
+    setNewCommentText(e.target.comment);
   }
 
   return (
@@ -50,14 +57,19 @@ export function Post({ author, publishedAt, content }) {
       </div>
       <form onSubmit={doCreateNewComment} className={styles.commentForm}>
         <strong>Leave your feedback</strong>
-        <textarea placeholder="Leave a feedback" />
+        <textarea
+          name="comment"
+          placeholder="Leave a feedback"
+          value={newCommentText}
+          onChange={doNewCommentChange}
+        />
         <footer>
           <button type="submit">Post</button>
         </footer>
       </form>
       <div className={styles.commentList}>
         {comments.map((commet) => (
-          <Comment key={commet} />
+          <Comment content={commet} />
         ))}
       </div>
     </article>
