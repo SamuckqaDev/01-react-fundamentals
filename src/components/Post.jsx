@@ -5,7 +5,7 @@ import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState(["Post very good !"]);
+  const [comments, setComments] = useState([]);
 
   const published = format(publishedAt, "d LLLL 'at' HH:mm'h'");
 
@@ -23,7 +23,7 @@ export function Post({ author, publishedAt, content }) {
   }
 
   function doNewCommentChange(e) {
-    setNewCommentText(e.target.comment);
+    setNewCommentText(e.target.value);
   }
 
   return (
@@ -44,11 +44,11 @@ export function Post({ author, publishedAt, content }) {
       <div className={styles.content}>
         {content.map((line) => {
           if (line.type === "paragraph") {
-            return <p>{line.content}</p>;
+            return <p key={line.content}>{line.content}</p>;
           }
           if (line.type === "link") {
             return (
-              <p>
+              <p key={line.content}>
                 <a href="#">{line.content}</a>
               </p>
             );
@@ -68,8 +68,8 @@ export function Post({ author, publishedAt, content }) {
         </footer>
       </form>
       <div className={styles.commentList}>
-        {comments.map((commet) => (
-          <Comment content={commet} />
+        {comments.map((comment) => (
+          <Comment key={comment} content={comment} />
         ))}
       </div>
     </article>
